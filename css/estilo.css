@@ -133,3 +133,55 @@ body {
 h1 {
   text-shadow: 2px 2px 0 #fff, 4px 4px 0 rgba(0,0,0,0.2);
 }
+/* Animação geral do card (entrada suave) */
+.card {
+  opacity: 0;
+  transform: scale(0.9) translateY(20px);
+  animation: entradaCard 1.2s ease forwards;
+}
+
+/* Título aparece primeiro */
+h1 {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: entradaTitulo 1s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Texto aparece depois */
+.mensagem {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: entradaTexto 1s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/* Assinatura por último */
+.assinatura {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: entradaTexto 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
+/* Keyframes */
+@keyframes entradaCard {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes entradaTitulo {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes entradaTexto {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
